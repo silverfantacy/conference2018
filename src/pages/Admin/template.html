@@ -18,7 +18,8 @@
                          class="form-control"
                          id="startTime"
                          maxlength="5"
-                         placeholder="例: 08:20">
+                         placeholder="例: 08:20"
+                         v-model="tempAgendaData.start_time">
                 </div>
                 <div class="form-group col-md-6">
                   <label for="endTime">結束時間</label>
@@ -26,7 +27,8 @@
                          class="form-control"
                          id="endTime"
                          maxlength="5"
-                         placeholder="例: 15:20">
+                         placeholder="例: 15:20"
+                         v-model="tempAgendaData.end_time">
                 </div>
               </div>
               <div class="form-group">
@@ -34,7 +36,8 @@
                 <textarea type="text"
                           class="form-control"
                           id="theme"
-                          placeholder="例: The clinical application of coenzyme Q10 supplements in hepatocellular carcinoma patients after surgery."></textarea>
+                          placeholder="例: The clinical application of coenzyme Q10 supplements in hepatocellular carcinoma patients after surgery."
+                          v-model="tempAgendaData.title"></textarea>
               </div>
               <div class="form-row">
                 <div class="form-group col-md-6">
@@ -43,7 +46,8 @@
                          class="form-control"
                          id="lecturerUnits"
                          maxlength="5"
-                         placeholder="服務單位">
+                         placeholder="服務單位"
+                         v-model="tempAgendaData.lector.job">
                 </div>
                 <div class="form-group col-md-6">
                   <label for="lecturerName">講師姓名</label>
@@ -51,7 +55,8 @@
                          class="form-control"
                          id="lecturerName"
                          maxlength="5"
-                         placeholder="姓名稱謂">
+                         placeholder="姓名稱謂"
+                         v-model="tempAgendaData.lector.name">
                 </div>
               </div>
               <div class="form-row">
@@ -61,7 +66,8 @@
                          class="form-control"
                          id="lecturerUnits"
                          maxlength="5"
-                         placeholder="服務單位">
+                         placeholder="服務單位"
+                         v-model="tempAgendaData.leader.job">
                 </div>
                 <div class="form-group col-md-6">
                   <label for="leaderName">引言人姓名</label>
@@ -69,17 +75,32 @@
                          class="form-control"
                          id="lecturerName"
                          maxlength="5"
-                         placeholder="姓名稱謂">
+                         placeholder="姓名稱謂"
+                         v-model="tempAgendaData.leader.name">
                 </div>
               </div>
               <button type="submit"
-                      class="btn btn-primary w-100">新 增</button>
+                      class="btn btn-primary w-100"
+                      @click="submitAgenda()">新 增</button>
             </form>
           </div>
         </div>
         <div class="col-7 show-data">
           <ul>
-            <li class="agenda-item p-3 mb-3">
+            <li class="agenda-item p-3 mb-3"
+                v-for="item in AgendaData">
+              <span>{{item.start_time}}~{{item.end_time}}</span>
+              <div>
+                <h3>{{item.title}}</h3>
+                <p class="agenda-item-personnel">
+                  <span class="agenda-item-label">授課講師</span>{{item.lector.job}}
+                  <br>{{item.lector.name}}</p>
+                <p class="agenda-item-personnel">
+                  <span class="agenda-item-label">引言人</span>{{item.leader.job}}
+                  <br>{{item.leader.name}}</p>
+              </div>
+            </li>
+            <!-- <li class="agenda-item p-3 mb-3">
               <span>08:20~15:20</span>
               <div>
                 <h3>開場-理事長</h3>
@@ -90,7 +111,7 @@
                   <span class="agenda-item-label">引言人</span>基●●庚●念醫院 臨●●●中心●任
                   <br>王XX 醫師</p>
               </div>
-            </li>
+            </li> -->
           </ul>
         </div>
       </div>
