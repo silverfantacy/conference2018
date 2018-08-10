@@ -1,3 +1,99 @@
 <div class="admin">
-  Admin
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container d-flex justify-content-center">
+      <a class="navbar-brand font-weight-bold"
+         href="#">2018 國際研討會後台</a>
+    </div>
+  </nav>
+  <main>
+    <div class="container my-5">
+      <div class="row">
+        <div class="col-5 ">
+          <div class="input-data bg-white rounded p-3 sticky-top align-items-start">
+            <form>
+              <div class="form-row">
+                <div class="form-group col-md-6">
+                  <label for="startTime">開始時間</label>
+                  <input type="text"
+                         class="form-control"
+                         id="startTime"
+                         maxlength="5"
+                         placeholder="例: 08:20">
+                </div>
+                <div class="form-group col-md-6">
+                  <label for="endTime">結束時間</label>
+                  <input type="text"
+                         class="form-control"
+                         id="endTime"
+                         maxlength="5"
+                         placeholder="例: 15:20">
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="theme">主題</label>
+                <textarea type="text"
+                          class="form-control"
+                          id="theme"
+                          placeholder="例: The clinical application of coenzyme Q10 supplements in hepatocellular carcinoma patients after surgery."></textarea>
+              </div>
+              <div class="form-row">
+                <div class="form-group col-md-6">
+                  <label for="lecturerUnits">講師服務單位</label>
+                  <input type="text"
+                         class="form-control"
+                         id="lecturerUnits"
+                         maxlength="5"
+                         placeholder="服務單位">
+                </div>
+                <div class="form-group col-md-6">
+                  <label for="lecturerName">講師姓名</label>
+                  <input type="text"
+                         class="form-control"
+                         id="lecturerName"
+                         maxlength="5"
+                         placeholder="姓名稱謂">
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group col-md-6">
+                  <label for="leaderUnits">引言人服務單位</label>
+                  <input type="text"
+                         class="form-control"
+                         id="lecturerUnits"
+                         maxlength="5"
+                         placeholder="服務單位">
+                </div>
+                <div class="form-group col-md-6">
+                  <label for="leaderName">引言人姓名</label>
+                  <input type="text"
+                         class="form-control"
+                         id="lecturerName"
+                         maxlength="5"
+                         placeholder="姓名稱謂">
+                </div>
+              </div>
+              <button type="submit"
+                      class="btn btn-primary w-100">新 增</button>
+            </form>
+          </div>
+        </div>
+        <div class="col-7 show-data">
+          <ul>
+            <li class="agenda-item p-3 mb-3">
+              <span>08:20~15:20</span>
+              <div>
+                <h3>開場-理事長</h3>
+                <p class="agenda-item-personnel">
+                  <span class="agenda-item-label">授課講師</span>●灣●●養●學推廣協●會暨榮譽●事長
+                  <br>XX 博士</p>
+                <p class="agenda-item-personnel">
+                  <span class="agenda-item-label">引言人</span>基●●庚●念醫院 臨●●●中心●任
+                  <br>王XX 醫師</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </main>
 </div>

@@ -1,2 +1,10 @@
 @import 'utils';
-@import "~bootstrap/scss/bootstrap";
+@import '~bootstrap/scss/bootstrap';
+html {
+  color: $light;
+}
+
+body {
+  font-family: -apple-system, 'Roboto', "微軟正黑體";
+  min-height: 100%;
+}
