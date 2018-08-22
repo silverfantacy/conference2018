@@ -45,7 +45,6 @@
                   <input type="text"
                          class="form-control"
                          id="lecturerUnits"
-                         maxlength="5"
                          placeholder="服務單位"
                          v-model="tempAgendaData.lector.job">
                 </div>
@@ -54,7 +53,6 @@
                   <input type="text"
                          class="form-control"
                          id="lecturerName"
-                         maxlength="5"
                          placeholder="姓名稱謂"
                          v-model="tempAgendaData.lector.name">
                 </div>
@@ -65,7 +63,6 @@
                   <input type="text"
                          class="form-control"
                          id="lecturerUnits"
-                         maxlength="5"
                          placeholder="服務單位"
                          v-model="tempAgendaData.leader.job">
                 </div>
@@ -74,7 +71,6 @@
                   <input type="text"
                          class="form-control"
                          id="lecturerName"
-                         maxlength="5"
                          placeholder="姓名稱謂"
                          v-model="tempAgendaData.leader.name">
                 </div>
@@ -88,14 +84,22 @@
         <div class="col-7 show-data">
           <ul>
             <li class="agenda-item p-3 mb-3"
-                v-for="item in AgendaData">
-              <span>{{item.start_time}}~{{item.end_time}}</span>
+                v-for="(item,key) in AgendaData"
+                :key=item.id>
+              <div class="d-flex justify-content-between">
+                <span>{{item.start_time}}~{{item.end_time}}</span>
+                <button type="button"
+                        class="btn btn-sm btn-outline-danger"
+                        @click="removeTodo(key)">刪除</button>
+              </div>
               <div>
                 <h3>{{item.title}}</h3>
-                <p class="agenda-item-personnel">
+                <p class="agenda-item-personnel"
+                   v-if="item.lector.job">
                   <span class="agenda-item-label">授課講師</span>{{item.lector.job}}
                   <br>{{item.lector.name}}</p>
-                <p class="agenda-item-personnel">
+                <p class="agenda-item-personnel"
+                   v-if="item.leader.job">
                   <span class="agenda-item-label">引言人</span>{{item.leader.job}}
                   <br>{{item.leader.name}}</p>
               </div>

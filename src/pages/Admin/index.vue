@@ -8,6 +8,7 @@ export default {
   data() {
     return {
       tempAgendaData: {
+        // id: 1,
         start_time: '08:02',
         end_time: '15:20',
         title:
@@ -25,26 +26,63 @@ export default {
     }
   },
   mounted() {
-    let vm = this
-    AgendaDataRef.orderByChild('id').on('value', function(snapshot) {
-      var val = snapshot.val()
-      // console.log(val)
-      vm.AgendaData = val
-    })
+    this.getData()
+    // console.log(AgendaDataRef.orderByChild('id'))
   },
   methods: {
+    getData() {
+      let vm = this
+      AgendaDataRef.orderByChild('id').on('value', function(snapshot) {
+        var val = snapshot.val()
+        // console.log(val)
+        vm.AgendaData = val
+      })
+    },
     submitAgenda() {
       let vm = this
-      // 避免亂數產生，使用時間命名
-      var timestamp = Math.floor(Date.now())
-      // console.log(timestamp)
-      // var itemId = 2
-      // var itemId = 1 + vm.AgendaData.length
-      // console.log(itemId)
-      AgendaDataRef.child(timestamp).set(vm.tempAgendaData)
-      // vm.tempAgendaData = ''
+      var temData = vm.tempAgendaData
+      if (!temData.start_time) {
+        return
+      }
+      var setTime = temData.start_time.split(':')
+      // console.log(typeof (setTime[0] + setTime[1]))
+      var setId = parseInt(setTime[0] + setTime[1])
+      // console.log(setId)
+      var str = {
+        id: setId,
+        start_time: temData.start_time,
+        end_time: temData.end_time,
+        title: temData.title,
+        lector: {
+          job: temData.lector.job,
+          name: temData.lector.name
+        },
+        leader: {
+          job: temData.leader.job,
+          name: temData.leader.name
+        }
+      }
+      AgendaDataRef.child(setId).set(str)
+      vm.tempAgendaData = {
+        start_time: '',
+        end_time: '',
+        title: '',
+        lector: {
+          job: '',
+          name: ''
+        },
+        leader: {
+          job: '',
+          name: ''
+        }
+      }
+    },
+    removeTodo(key) {
+      AgendaDataRef.child(key).set(null)
+      console.log(key)
     }
-  }
+  },
+  computed: {}
 }
 </script>
 
