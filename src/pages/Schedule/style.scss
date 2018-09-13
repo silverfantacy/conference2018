@@ -1,0 +1,47 @@
+@import '../../assets/style/utils';
+.schedule {
+  label {
+    padding: 5px 10px;
+    background: $teal;
+    border-radius: 50px;
+    line-height: 1rem;
+    font-size: 1rem;
+    color: $light;
+    font-weight: bold;
+  }
+  .input-data {
+    box-shadow: 0px 3px 10px rgba($black, 0.3);
+  }
+  ul {
+    list-style-type: none;
+  }
+  .agenda-item {
+    background: #f5ffe9;
+    box-shadow: 0px 3px 10px rgba($black, 0.3);
+    &:nth-child(2n) {
+      background: #e9fffa;
+    }
+    .agenda-item-personnel {
+      display: flex;
+      align-items: center;
+    }
+    .agenda-item-label {
+      display: block;
+      border: 1px solid $primary;
+      width: 150px;
+      height: 48px;
+      line-height: 48px;
+      text-align: center;
+      margin-right: 1rem;
+      font-weight: bold;
+      color: $primary;
+    }
+    p:last-child {
+      margin-bottom: 0;
+    }
+    h3 {
+      word-wrap: break-word;
+      white-space: pre-wrap;
+    }
+  }
+}

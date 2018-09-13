@@ -1,0 +1,145 @@
+<div class="schedule">
+  <main>
+    <div class="container my-5">
+      <div class="row">
+        <div class="col-5 ">
+          <div class="input-data bg-white rounded p-3 sticky-top align-items-start">
+            <form>
+              <div class="form-row">
+                <div class="form-group col-md-6">
+                  <label for="startTime">開始時間</label>
+                  <input type="text"
+                         class="form-control"
+                         id="startTime"
+                         maxlength="5"
+                         placeholder="例: 08:20"
+                         v-model="tempAgendaData.start_time">
+                </div>
+                <div class="form-group col-md-6">
+                  <label for="endTime">結束時間</label>
+                  <input type="text"
+                         class="form-control"
+                         id="endTime"
+                         maxlength="5"
+                         placeholder="例: 15:20"
+                         v-model="tempAgendaData.end_time">
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="theme">中文主題1</label>
+                <textarea type="text"
+                          class="form-control"
+                          id="theme"
+                          placeholder="例: 還營養為一線治療"
+                          v-model="tempAgendaData.title.cht_1"></textarea>
+              </div>
+              <div class="form-group">
+                <label for="theme">英文主題1</label>
+                <textarea type="text"
+                          class="form-control"
+                          id="theme"
+                          placeholder="例: Let nutrition be first-line treatment"
+                          v-model="tempAgendaData.title.eng_1"></textarea>
+              </div>
+              <div class="form-group">
+                <label for="theme">中文主題2</label>
+                <textarea type="text"
+                          class="form-control"
+                          id="theme"
+                          placeholder="例: 還營養為一線治療"
+                          v-model="tempAgendaData.title.cht_2"></textarea>
+              </div>
+              <div class="form-group">
+                <label for="theme">英文主題2</label>
+                <textarea type="text"
+                          class="form-control"
+                          id="theme"
+                          placeholder="例: Let nutrition be first-line treatment"
+                          v-model="tempAgendaData.title.eng_2"></textarea>
+              </div>
+              <div class="form-row">
+                <div class="form-group col-md-6">
+                  <label for="lecturerUnits">講師服務單位</label>
+                  <input type="text"
+                         class="form-control"
+                         id="lecturerUnits"
+                         placeholder="服務單位"
+                         v-model="tempAgendaData.lector.job">
+                </div>
+                <div class="form-group col-md-6">
+                  <label for="lecturerName">講師姓名</label>
+                  <input type="text"
+                         class="form-control"
+                         id="lecturerName"
+                         placeholder="姓名稱謂"
+                         v-model="tempAgendaData.lector.name">
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group col-md-6">
+                  <label for="leaderUnits">引言人服務單位</label>
+                  <input type="text"
+                         class="form-control"
+                         id="lecturerUnits"
+                         placeholder="服務單位"
+                         v-model="tempAgendaData.leader.job">
+                </div>
+                <div class="form-group col-md-6">
+                  <label for="leaderName">引言人姓名</label>
+                  <input type="text"
+                         class="form-control"
+                         id="lecturerName"
+                         placeholder="姓名稱謂"
+                         v-model="tempAgendaData.leader.name">
+                </div>
+              </div>
+              <button type="submit"
+                      class="btn btn-primary w-100"
+                      @click="submitAgenda()">新 增</button>
+            </form>
+          </div>
+        </div>
+        <div class="col-7 show-data">
+          <ul>
+            <li class="agenda-item p-3 mb-3"
+                v-for="(item,key) in AgendaData"
+                :key=item.id>
+              <div class="d-flex justify-content-between">
+                <span>{{item.start_time}}~{{item.end_time}}</span>
+                <button type="button"
+                        class="btn btn-sm btn-outline-danger"
+                        @click="removeTodo(key)">刪除</button>
+              </div>
+              <div>
+                <h3>{{item.title.cht_1}}</h3>
+                <h4 v-if="item.title.eng_1">{{item.title.eng_1}}</h4>
+                <h3 v-if="item.title.cht_2">{{item.title.cht_2}}</h3>
+                <h4 v-if="item.title.eng_2">{{item.title.eng_2}}</h4>
+                <p class="agenda-item-personnel"
+                   v-if="item.lector.job">
+                  <span class="agenda-item-label">授課講師</span>{{item.lector.job}}
+                  <br>{{item.lector.name}}</p>
+                <p class="agenda-item-personnel"
+                   v-if="item.leader.job">
+                  <span class="agenda-item-label">引言人</span>{{item.leader.job}}
+                  <br>{{item.leader.name}}</p>
+              </div>
+            </li>
+            <!-- <li class="agenda-item p-3 mb-3">
+              <span>08:20~15:20</span>
+              <div>
+                <h3>開場-理事長</h3>
+                <p class="agenda-item-personnel">
+                  <span class="agenda-item-label">授課講師</span>●灣●●養●學推廣協●會暨榮譽●事長
+                  <br>XX 博士</p>
+                <p class="agenda-item-personnel">
+                  <span class="agenda-item-label">引言人</span>基●●庚●念醫院 臨●●●中心●任
+                  <br>王XX 醫師</p>
+              </div>
+            </li> -->
+          </ul>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>

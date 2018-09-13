@@ -1,5 +1,20 @@
 @import 'utils';
 @import '~bootstrap/scss/bootstrap';
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
+}
+
+.fade-enter-to,
+.fade-leave {
+  opacity: 1;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.3s;
+}
+
 html {
   color: $light;
 }
