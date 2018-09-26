@@ -6,6 +6,11 @@ Vue.use(Router)
 export default new Router({
   routes: [
     {
+      path: '/index',
+      name: 'Index',
+      component: () => import('@/pages/Index')
+    },
+    {
       path: '/admin',
       name: 'Admin',
       component: () => import('@/pages/Admin'),
@@ -24,7 +29,7 @@ export default new Router({
     },
     {
       path: '*',
-      redirect: '/admin'
+      redirect: '/index'
     }
   ]
 })

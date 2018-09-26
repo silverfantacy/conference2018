@@ -1,9 +1,9 @@
 <script>
-// /* global firebase */
-// let CreditDataRef = firebase.database().ref('/CreditData')
-// console.log(CreditDataRef)
 export default {
-  name: 'credit'
+  name: 'index',
+  mounted() {
+    // document.location.href = 'https://nutraceutical.org.tw/'
+  }
 }
 </script>
 

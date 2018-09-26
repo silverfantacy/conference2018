@@ -1,3 +1,63 @@
 <div class="credit">
-  Credit
+  <main>
+    <div class="container my-5">
+      <div class="row">
+        <div class="col-5 ">
+          <div class="input-data bg-white rounded p-3 sticky-top align-items-start">
+            <form>
+              <div class="form-row">
+                <div class="form-group col-md-7">
+                  <label for="theme">類別</label>
+                  <select class="form-control"
+                          id="exampleFormControlSelect1">
+                    <option>醫生</option>
+                    <option>藥師</option>
+                    <option>護理師</option>
+                    <option>營養師</option>
+                    <option>醫檢人員</option>
+                  </select>
+                </div>
+                <div class="form-group col-md-5">
+                  <label for="theme">其他類別</label>
+                  <input type="text"
+                         class="form-control"
+                         id="theme"
+                         placeholder="不再列表內才需填寫">
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="theme">公會學會名稱</label>
+                <input type="text"
+                       class="form-control"
+                       id="theme"
+                       placeholder="例: 中華民國醫師公會全國聯合會">
+              </div>
+              <div class="form-group">
+                <label for="theme">教育學分數</label>
+                <input type="text"
+                       class="form-control"
+                       id="theme"
+                       placeholder="例: 3 或 乙類3">
+              </div>
+              <button type="submit"
+                      class="btn btn-primary w-100"
+                      @click="submitAgenda()">新 增</button>
+            </form>
+          </div>
+        </div>
+        <div class="col-7 show-data">
+          <div class="form-group">
+            <select class="form-control"
+                    id="exampleFormControlSelect1">
+              <option>醫生</option>
+              <option>藥師</option>
+              <option>護理師</option>
+              <option>營養師</option>
+              <option>醫檢人員</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
 </div>

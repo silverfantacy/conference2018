@@ -9,7 +9,7 @@ export default {
     return {}
   },
   mounted() {
-    console.log(this.$route.fullPath)
+    // console.log(this.$route.fullPath)
   },
   computed: {
     scheduleActiveClass() {

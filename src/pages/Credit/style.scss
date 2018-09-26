@@ -1,2 +1,18 @@
 @import '../../assets/style/utils';
-.credit {}
+.credit {
+  label {
+    padding: 5px 10px;
+    background: $teal;
+    border-radius: 50px;
+    line-height: 1rem;
+    font-size: 1rem;
+    color: $light;
+    font-weight: bold;
+  }
+  .input-data {
+    box-shadow: 0px 3px 10px rgba($black, 0.3);
+  }
+  ul {
+    list-style-type: none;
+  }
+}
