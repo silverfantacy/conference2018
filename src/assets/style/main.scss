@@ -20,6 +20,7 @@ html {
 }
 
 body {
-  font-family: -apple-system, 'Roboto', "微軟正黑體";
+  font-family: "微軟正黑體", -apple-system, 'Roboto';
   min-height: 100%;
+  line-height: rhythm(3);
 }

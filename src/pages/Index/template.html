@@ -1,3 +1,166 @@
 <div class="index">
-  施工中
+  <header>
+    <div class="container">
+      <div class="logo">
+        <img src="../../../static/images/logo.png"
+             alt="">
+      </div>
+      <div class="header-block">
+        <div class="header-title">
+          <img src="../../../static/images/header-title.png"
+               alt="">
+        </div>
+        <div style="position: relative;z-index: 20 !important;">
+          <h1 class="text-primary font-weight-bold">營養醫學與癌症整合性治療的<br />最新應用及前瞻性</h1>
+          <div class="bottom-text">營養醫學與癌症整合性治療的<br />最新應用及前瞻性</div>
+        </div>
+        <div class="header-subtitle">The latest nutraceutical application and prospects in<br />integrative cancer
+          treatment and prevention.</div>
+      </div>
+      <div class="header-date">
+        11/11
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="container">
+      <!-- 活動介紹 -->
+      <div class="section section-introduction">
+        <h2>活動介紹</h2>
+        <div class="introduction-content">
+          <p>現今癌症治療方式新穎多元，臨床證據也建議癌症病患需要營養介入以輔助治療的成效，醫事人員越來越注重營養領域，近年來與日俱增的科學及臨床證據顯示，營養醫學（Nutracetical）在腫瘤輔助治療上有驚人成效，這將成為癌症治療上不可或缺的重要一環。</p>
+          <p>本次研討會將發表營養素介入疾病治療的重大突破邀請海內外專家及臨床醫師，用科學臨床試驗數據俯瞰「營養醫學與癌症整合性治療」所發揮的成效與前瞻性。相信這將會是癌症治療結合營養領域向前跨進的一大步，也期待這一場研討會帶給所有醫事人員多一分專業領域，給出更合適癌症病患的營養建議，提高癌症病患其醫療照護及生活品質。</p>
+        </div>
+      </div>
+
+      <!-- 活動時間 -->
+      <div class="section">
+        <h2>活動時間</h2>
+        <p>2018/11/11 8:20~17:50</p>
+      </div>
+
+      <!-- 活動地點 -->
+      <div class="section">
+        <h2>活動地點</h2>
+        <div class="map-block">
+          <div id="map"></div>
+          <div class="map-info">
+            <p>台北福華國際文教會館 2F 卓越堂 (台北市大安區新生南路三段 30 號)</p>
+            <div class="map-btn">
+              <button type="button"
+                      class="btn btn-primary">規劃路線</button>
+              <button type="button"
+                      class="btn btn-primary">檢視較大的地圖</button>
+            </div>
+          </div>
+        </div>
+        <a href="">福華國際文教會館 詳細交通資訊</a>
+      </div>
+
+      <!-- 報名資訊 -->
+      <div class="section">
+        <h2>報名資訊</h2>
+        <div class="price">
+          <div>
+            <p>協會及協辦單位會員</p>
+            <p>400元</p>
+          </div>
+        </div>
+        <ul>
+          <li>截止日期：即日起至 107 年 11 月 02 日止。 </li>
+          <li>聯絡人：郭玲君 小姐</li>
+          <li>電話：( 02 ) 2546 - 8824</li>
+          <li>傳真：( 02 ) 2545 - 9225</li>
+          <li>報名方式：可利用傳真、E-MAIL 或線上報名。<br />
+            （報名完成後，將會與您聯絡通知活動簽到序號及繳費方式。）<br />
+            ＊為響應環保，現場不提供紙杯，請自行準備水杯，謝謝。
+          </li>
+        </ul>
+        <button type="button"
+                class="btn btn-primary">立 即 報 名
+        </button>
+      </div>
+
+      <!-- 議程表 -->
+      <div class="section">
+        <h2>議程表</h2>
+        <div><span>11</span> NOVEMBER</div>
+        <ul>
+          <li>
+            <div>
+              <div>
+                <div>09:00</div>
+                <div>09:20</div>
+              </div>
+              <div></div>
+              <div>
+                <div>
+                  <h3>營養基因組學和營養遺傳學及微生物遺傳學在人類健康上的新展望</h3>
+                  <h4>New prospect for nutrigenomics and nutrigenetics with microbiome in health</h4>
+                  <div>
+                    <div>授課講師</div>
+                    <p>臺北醫學大學臺北癌症中心<br />院長 彭汪嘉康 院士</p>
+                  </div>
+                  <div>
+                    <div>引言人</div>
+                    <p>臺北醫學大學臺北癌症中心<br />院長 彭汪嘉康 院士</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <!-- 學分數 -->
+      <div class="section">
+        <h2>學分數</h2>
+        <div class="form-group">
+          <label for="theme">請選擇身分</label>
+          <select class="form-control"
+                  id="exampleFormControlSelect1">
+            <option>醫生</option>
+            <option>藥師</option>
+            <option>護理師</option>
+            <option>營養師</option>
+            <option>醫檢人員</option>
+          </select>
+        </div>
+        <table class="table mt-3">
+          <thead class="thead-teal">
+            <tr>
+              <th scope="col">公會學會名稱</th>
+              <th scope="col">教育學分數</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr v-for="(item,key) in CreditData">
+            <tr>
+              <th scope="row">中華民國醫事檢驗師公會全國聯合會</th>
+              <td>7.4積分</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- 主辦、協辦、贊助單位 -->
+      <div class="section">
+        <h2>主辦單位</h2>
+        <p>台灣營養醫學推廣學會</p>
+      </div>
+      <div class="section">
+        <h2>協辦單位</h2>
+        <p>台灣營養學會、台灣癌症基金會、乳癌防治基金會、財團法人癌症希望基金會、中華民國藥師公會全國聯合會、台灣癌症熱治療學會、新健康營養諮詢中心</p>
+      </div>
+      <div class="section">
+        <h2>贊助單位</h2>
+        <p>新賀斯國際有限公司、DeWell</p>
+      </div>
+    </div>
+  </main>
+  <footer>
+    <p class="text-center">
+      台灣營養醫學推廣協會 版權所有 © 2018 Taiwan Nutraceutical Association. All Rights Reserved.<br />本網站最佳瀏覽建議使用Chrome 瀏覽器
+    </p>
+  </footer>
 </div>

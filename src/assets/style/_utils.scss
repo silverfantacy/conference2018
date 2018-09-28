@@ -32,14 +32,17 @@ $grays: map-merge(
 );
 
 
-$blue:    #007bff !default;
+// $blue:    #007bff !default;
+$blue:    #007FFE !default;
 $indigo:  #6610f2 !default;
 $purple:  #6f42c1 !default;
-$pink:    #e83e8c !default;
+// $pink:    #e83e8c !default;
+$pink:    #FFBBBB !default;
 $red:     #dc3545 !default;
 $orange:  #fd7e14 !default;
 $yellow:  #ffc107 !default;
-$green:   #28a745 !default;
+// $green:   #28a745 !default;
+$green:   #A0D29B !default;
 $teal:    #20c997 !default;
 $cyan:    #17a2b8 !default;
 
@@ -65,9 +68,12 @@ $colors: map-merge(
 );
 
 $primary:       $blue !default;
-$secondary:     $gray-600 !default;
-$success:       $green !default;
-$info:          $cyan !default;
+// $secondary:     $gray-600 !default;
+$secondary:     $green !default;
+// $success:       $green !default;
+$success:       $teal !default;
+// $info:          $cyan !default;
+$info:          $pink !default;
 $warning:       $yellow !default;
 $danger:        $red !default;
 $light:         $gray-100 !default;
@@ -88,3 +94,25 @@ $theme-colors: map-merge(
   ),
   $theme-colors
 );
+
+$baseLine: 10px;
+$lineRatio: 1.2;
+
+@function rhythm($level) {
+  @return $baseLine * ceil($level);
+} // 10的倍數
+
+@function line($size) {
+  @return rhythm($size * $lineRatio / $baseLine);
+} // 算行高
+
+@mixin font($size, $line-height: auto) {
+  $line: line($size);
+  font-size: $size;
+  @if $line-height==auto or $line-height < $line {
+    line-height: $line;
+  }
+  @else {
+    line-height: $line-height;
+  }
+}

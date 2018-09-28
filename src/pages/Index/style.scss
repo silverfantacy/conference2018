@@ -1,3 +1,87 @@
-.index{
-  
+@import '../../assets/style/utils';
+.index {
+  /*=== 頁首 ===*/
+  header {
+    position: relative;
+    height: 600px; // background-color: blanchedalmond;
+    background-image: url('../../../static/images/header.png');
+    background-position: center right;
+    background-size: cover;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    .logo {
+      padding-top: rhythm(5);
+    }
+    .header-block {
+      margin-top: rhythm(9);
+    }
+    .header-title {
+      margin-bottom: rhythm(1);
+    }
+    h1 {
+      font-size: 3rem; // text-shadow: 3px 3px 0 $info;
+      line-height: rhythm(6);
+    }
+    .bottom-text {
+      position: absolute;
+      top: 3px;
+      left: 3px;
+      font-size: 3rem; // text-shadow: 3px 3px 0 $info;
+      line-height: rhythm(6);
+      -webkit-text-stroke: 1px $info;
+      color: white;
+      z-index: -1;
+    }
+    .header-subtitle {
+      color: #4cb0e2;
+      line-height: rhythm(2);
+    }
+    .header-date {
+      font-size: 3rem;
+      color: $white;
+      font-weight: bold;
+      text-align: center;
+      line-height: 6rem;
+      display: block;
+      position: absolute;
+      bottom: calc( (-253px / 2) - 35px);
+      width: 253px;
+      height: 253px;
+      border-radius: 50%;
+      background: $info;
+    }
+  }
+  /*=== 內容 ===*/
+  .section {
+    margin-top: rhythm(6);
+  }
+  main {
+    h2 {
+      color: $primary;
+      font-size: 1.5rem;
+      font-weight: bold;
+      position: relative;
+      margin-bottom: 1.5rem;
+      &::before {
+        content: '';
+        display: block;
+        position: absolute;
+        bottom: 0;
+        left: 1rem;
+        width: 83px;
+        height: 1rem;
+        background: $info;
+        z-index: -1;
+      }
+    }
+    /*=== 活動介紹 ===*/
+    .introduction-content {
+      padding-left: 1.5rem;
+      border-left: 5px solid $secondary;
+      p {
+        text-indent: 2rem;
+      }
+    }
+  }
+  /*=== 頁尾 ===*/
 }
