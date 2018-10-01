@@ -43,30 +43,42 @@
       <div class="section">
         <h2>活動地點</h2>
         <div class="map-block">
-          <div id="map"></div>
+          <div id="map">
+            <img src="../../../static/images/Map.png"
+                 alt="">
+          </div>
           <div class="map-info">
-            <p>台北福華國際文教會館 2F 卓越堂 (台北市大安區新生南路三段 30 號)</p>
-            <div class="map-btn">
+            <p>台北福華國際文教會館 2F 卓越堂<br />(台北市大安區新生南路三段 30 號)</p>
+            <div class="map-btn ml-auto">
               <button type="button"
-                      class="btn btn-primary">規劃路線</button>
+                      class="btn btn-light">規劃路線</button>
               <button type="button"
-                      class="btn btn-primary">檢視較大的地圖</button>
+                      class="btn btn-light">檢視較大的地圖</button>
             </div>
           </div>
         </div>
-        <a href="">福華國際文教會館 詳細交通資訊</a>
+        <a class="map-link"
+           href="">福華國際文教會館 詳細交通資訊</a>
       </div>
 
       <!-- 報名資訊 -->
-      <div class="section">
+      <div class="section d-flex flex-column">
         <h2>報名資訊</h2>
-        <div class="price">
+        <div class="price-block">
           <div>
-            <p>協會及協辦單位會員</p>
-            <p>400元</p>
+            <p class="price-title">協會及協辦單位會員</p>
+            <p class="price-nmb">400元</p>
+          </div>
+          <div>
+            <p class="price-title">學生（憑學生證）</p>
+            <p class="price-nmb">300元</p>
+          </div>
+          <div>
+            <p class="price-title">非會員</p>
+            <p class="price-nmb">600元</p>
           </div>
         </div>
-        <ul>
+        <ul class="price-info">
           <li>截止日期：即日起至 107 年 11 月 02 日止。 </li>
           <li>聯絡人：郭玲君 小姐</li>
           <li>電話：( 02 ) 2546 - 8824</li>
@@ -77,43 +89,70 @@
           </li>
         </ul>
         <button type="button"
-                class="btn btn-primary">立 即 報 名
+                class="btn btn-primary price-btn">立 即 報 名
         </button>
       </div>
 
       <!-- 議程表 -->
-      <div class="section">
+      <div class="section section-schedule">
         <h2>議程表</h2>
-        <div><span>11</span> NOVEMBER</div>
-        <ul>
-          <li>
+        <div class="schedule-date"><span>11</span> NOVEMBER</div>
+        <ul class="schedule">
+          <li class="schedule-item">
+
+            <div class="schedule-item-time">
+              <div>09:00</div>
+              <div>~09:20</div>
+            </div>
+            <div class="schedule-item-decoration"></div>
             <div>
               <div>
-                <div>09:00</div>
-                <div>09:20</div>
-              </div>
-              <div></div>
-              <div>
-                <div>
-                  <h3>營養基因組學和營養遺傳學及微生物遺傳學在人類健康上的新展望</h3>
-                  <h4>New prospect for nutrigenomics and nutrigenetics with microbiome in health</h4>
-                  <div>
-                    <div>授課講師</div>
-                    <p>臺北醫學大學臺北癌症中心<br />院長 彭汪嘉康 院士</p>
-                  </div>
-                  <div>
-                    <div>引言人</div>
-                    <p>臺北醫學大學臺北癌症中心<br />院長 彭汪嘉康 院士</p>
-                  </div>
+                <h3 class="schedule-item-title-ch text-primary">合併應用抗癌藥物與營養補充品在三陰性乳癌小鼠模式的治療</h3>
+                <h4 class="schedule-item-title-eng">A therapeutic Synergism with Anti-cancer Agents and Nutritional
+                  Supplement Formulation Combination Treatment in TNBC-xenograft Mice</h4>
+                <div class="schedule-item-leader">
+                  <div class="text-primary">授課講師</div>
+                  <p>臺北醫學大學臺北癌症中心<br />院長 彭汪嘉康 院士</p>
+                </div>
+                <div class="schedule-item-lector">
+                  <div class="text-primary">引言人</div>
+                  <p>臺北醫學大學臺北癌症中心<br />院長 彭汪嘉康 院士</p>
                 </div>
               </div>
             </div>
+
+          </li>
+
+          <li class="schedule-item">
+
+            <div class="schedule-item-time">
+              <div>09:00</div>
+              <div>~09:20</div>
+            </div>
+            <div class="schedule-item-decoration"></div>
+            <div>
+              <div>
+                <h3 class="schedule-item-title-ch text-primary">合併應用抗癌藥物與營養補充品在三陰性乳癌小鼠模式的治療</h3>
+                <h4 class="schedule-item-title-eng">A therapeutic Synergism with Anti-cancer Agents and Nutritional
+                  Supplement
+                  Formulation Combination Treatment in TNBC-xenograft Mice</h4>
+                <div class="schedule-item-leader">
+                  <div class="text-primary">授課講師</div>
+                  <p>臺北醫學大學臺北癌症中心<br />院長 彭汪嘉康 院士</p>
+                </div>
+                <div class="schedule-item-lector">
+                  <div class="text-primary">引言人</div>
+                  <p>臺北醫學大學臺北癌症中心<br />院長 彭汪嘉康 院士</p>
+                </div>
+              </div>
+            </div>
+
           </li>
         </ul>
       </div>
 
       <!-- 學分數 -->
-      <div class="section">
+      <div class="section section-credit">
         <h2>學分數</h2>
         <div class="form-group">
           <label for="theme">請選擇身分</label>
@@ -127,17 +166,21 @@
           </select>
         </div>
         <table class="table mt-3">
-          <thead class="thead-teal">
+          <thead class="bg-third text-white font-weight-bold">
             <tr>
               <th scope="col">公會學會名稱</th>
-              <th scope="col">教育學分數</th>
+              <th scope="col" class="text-center" style="padding-left: 12px;">教育學分數</th>
             </tr>
           </thead>
           <tbody>
             <tr v-for="(item,key) in CreditData">
             <tr>
               <th scope="row">中華民國醫事檢驗師公會全國聯合會</th>
-              <td>7.4積分</td>
+              <td class="text-center font-weight-bold">7.4</td>
+            </tr>
+            <tr>
+              <th scope="row">中華民國醫事檢驗師公會全國聯合會</th>
+              <td class="text-center font-weight-bold">7.4</td>
             </tr>
           </tbody>
         </table>

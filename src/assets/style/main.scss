@@ -16,11 +16,11 @@
 }
 
 html {
-  color: $light;
 }
 
 body {
   font-family: "微軟正黑體", -apple-system, 'Roboto';
   min-height: 100%;
   line-height: rhythm(3);
+  color: $dark;
 }

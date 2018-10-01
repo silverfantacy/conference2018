@@ -74,7 +74,7 @@
                 </tr>
               </thead>
               <tbody>
-                <tr v-for="(item,key) in CreditData" v-if="selectClass === item.class">
+                <tr v-for="(item,key) in CreditData" v-if="selectClass === '' | selectClass === item.class">
                   <th scope="row">{{item.title}}</th>
                   <td>{{item.credit}}</td>
                   <td scope="col"><button type="button"
