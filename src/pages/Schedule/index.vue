@@ -1,6 +1,5 @@
 <script>
 /* global firebase */
-// let adminDataRef = firebase.database().ref('/chatData/')
 let AgendaDataRef = firebase.database().ref('/agendaData')
 // console.log(AgendaDataRef)
 export default {
@@ -29,7 +28,7 @@ export default {
       AgendaData: []
     }
   },
-  mounted() {
+  created() {
     this.getData()
     // console.log(AgendaDataRef.orderByChild('id'))
   },

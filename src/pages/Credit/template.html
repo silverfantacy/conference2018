@@ -9,12 +9,11 @@
                 <div class="form-group col-md-7">
                   <label for="theme">類別</label>
                   <select class="form-control"
-                          id="exampleFormControlSelect1">
-                    <option>醫生</option>
-                    <option>藥師</option>
-                    <option>護理師</option>
-                    <option>營養師</option>
-                    <option>醫檢人員</option>
+                          id="exampleFormControlSelect1"
+                          v-model="tempCreditData.class">
+                    <option value="">--- 請選擇類別 ---</option>
+                    <option v-for="item in className"
+                            :value="item">{{item}}</option>
                   </select>
                 </div>
                 <div class="form-group col-md-5">
@@ -22,7 +21,8 @@
                   <input type="text"
                          class="form-control"
                          id="theme"
-                         placeholder="不再列表內才需填寫">
+                         placeholder="不再列表內才需填寫"
+                         v-model="tempCreditData.other_class">
                 </div>
               </div>
               <div class="form-group">
@@ -30,23 +30,33 @@
                 <input type="text"
                        class="form-control"
                        id="theme"
-                       placeholder="例: 中華民國醫師公會全國聯合會">
+                       placeholder="例: 中華民國醫師公會全國聯合會"
+                       v-model="tempCreditData.title">
               </div>
               <div class="form-group">
                 <label for="theme">教育學分數</label>
                 <input type="text"
                        class="form-control"
                        id="theme"
-                       placeholder="例: 3 或 乙類3">
+                       placeholder="例: 3 或 乙類3"
+                       v-model="tempCreditData.credit">
               </div>
               <button type="submit"
                       class="btn btn-primary w-100"
-                      @click="submitAgenda()">新 增</button>
+                      @click="submitCredit()">新 增</button>
             </form>
           </div>
         </div>
         <div class="col-7 show-data">
+          <!-- <pre>{{className}}</pre> -->
           <div class="form-group">
+            <select class="form-control"
+                    id="exampleFormControlSelect1"
+                    v-model="selectClass">
+              <option value="">--- 請選擇類別 ---</option>
+              <option v-for="item in className" :value="item">{{item}}</option>
+            </select>
+          <!-- <div class="form-group">
             <select class="form-control"
                     id="exampleFormControlSelect1">
               <option>醫生</option>
@@ -54,7 +64,7 @@
               <option>護理師</option>
               <option>營養師</option>
               <option>醫檢人員</option>
-            </select>
+            </select> -->
             <table class="table mt-3">
               <thead class="thead-teal">
                 <tr>
@@ -64,20 +74,20 @@
                 </tr>
               </thead>
               <tbody>
-                <tr>
+                <tr v-for="(item,key) in CreditData" v-if="selectClass === item.class">
+                  <th scope="row">{{item.title}}</th>
+                  <td>{{item.credit}}</td>
+                  <td scope="col"><button type="button"
+                            class="btn btn-sm btn-outline-danger"
+                            @click="removeCredit(key)">刪除</button></td>
+                </tr>
+                <!-- <tr>
                   <th scope="row">中華民國醫事檢驗師公會全國聯合會</th>
                   <td>7.4積分</td>
                   <td scope="col"><button type="button"
-                          class="btn btn-sm btn-outline-danger"
-                          @click="removeTodo(key)">刪除</button></td>
-                </tr>
-                <tr>
-                  <th scope="row">中華民國醫事檢驗師公會全國聯合會</th>
-                  <td>7.4積分</td>
-                  <td scope="col"><button type="button"
-                          class="btn btn-sm btn-outline-danger"
-                          @click="removeTodo(key)">刪除</button></td>
-                </tr>
+                            class="btn btn-sm btn-outline-danger"
+                            @click="removeTodo(key)">刪除</button></td>
+                </tr> -->
               </tbody>
             </table>
           </div>
