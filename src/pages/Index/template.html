@@ -1,6 +1,6 @@
 <div class="index">
   <header>
-  <!-- <header class="d-none d-md-block"> -->
+    <!-- <header class="d-none d-md-block"> -->
     <div class="container">
       <div class="logo text-center text-md-left">
         <img src="../../../static/images/logo.png"
@@ -130,12 +130,12 @@
                 <div class="schedule-item-lector d-flex flex-column flex-md-row align-items-start"
                      v-if="item.lector.job">
                   <div class="text-primary">授課講師</div>
-                  <p>{{item.lector.job}}<br />{{item.lector.name}}</p>
+                  <p class="mt-1 mt-md-0">{{item.lector.job}}<br />{{item.lector.name}}</p>
                 </div>
                 <div class="schedule-item-leader d-flex flex-column flex-md-row align-items-start"
                      v-if="item.leader.job">
                   <div class="text-primary">引言人</div>
-                  <p>{{item.leader.job}}<br />{{item.leader.name}}</p>
+                  <p class="mt-1 mt-md-0">{{item.leader.job}}<br />{{item.leader.name}}</p>
                 </div>
               </div>
             </div>
@@ -175,7 +175,7 @@
         <h2>學分數</h2>
         <div class="form-group">
           <label for="theme">請選擇身分</label>
-          <select class="form-control"
+          <select class="form-control ml-auto ml-md-0"
                   id="exampleFormControlSelect1"
                   v-model="selectClass">
             <option value="">--- 請選擇類別 ---</option>
@@ -189,7 +189,7 @@
               <th scope="col">公會學會名稱</th>
               <th scope="col"
                   class="text-center"
-                  style="padding-left: 12px;">教育學分數</th>
+                  style="padding-left: 12px;">學分數</th>
             </tr>
           </thead>
           <tbody>
@@ -222,8 +222,13 @@
     </div>
   </main>
   <footer>
-    <p class="text-center">
-      台灣營養醫學推廣協會 版權所有 © 2018 Taiwan Nutraceutical Association. All Rights Reserved.<br />本網站最佳瀏覽建議使用Chrome 瀏覽器
-    </p>
+    <div class="container">
+      <p class="text-center d-none d-md-block">
+        台灣營養醫學推廣協會 版權所有 © 2018 Taiwan Nutraceutical Association. All Rights Reserved.<br />本網站最佳瀏覽建議使用Chrome 瀏覽器
+      </p>
+      <p class="text-center d-block d-md-none">
+        台灣營養醫學推廣協會 版權所有 © 2018<br />Taiwan Nutraceutical Association. All Rights Reserved.<br />本網站最佳瀏覽建議使用Chrome 瀏覽器
+      </p>
+    </div>
   </footer>
 </div>
