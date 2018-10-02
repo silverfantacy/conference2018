@@ -1,4 +1,9 @@
+@import '../../assets/style/main';
 .googleMap {
-  flex: 1 2 635px;
+  display: block;
   height: 300px;
+  @include media-breakpoint-up(md) {
+    flex: 1 2 635px;
+    height: 300px;
+  }
 }

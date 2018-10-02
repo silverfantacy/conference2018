@@ -1,11 +1,13 @@
 <div class="index">
   <header>
+  <!-- <header class="d-none d-md-block"> -->
     <div class="container">
-      <div class="logo">
+      <div class="logo text-center text-md-left">
         <img src="../../../static/images/logo.png"
              alt="">
       </div>
-      <div class="header-block">
+      <!-- pc 版 -->
+      <div class="header-block d-none d-md-block">
         <div class="header-title">
           <img src="../../../static/images/header-title.png"
                alt="">
@@ -17,8 +19,19 @@
         <div class="header-subtitle">The latest nutraceutical application and prospects in<br />integrative cancer
           treatment and prevention.</div>
       </div>
-      <div class="header-date">
+      <div class="header-date d-none d-md-block">
         11/11
+      </div>
+      <!-- phome 版 -->
+      <div class="header-ph-block d-block d-md-none">
+        <div class="header-title text-center">
+          <img src="../../../static/images/header-title-ph.png"
+               alt="">
+        </div>
+        <div class="h1-bg">
+          <h1 class="text-white text-center font-weight-bold">營養醫學與癌症<br />整合性治療的<br />最新應用及前瞻性</h1>
+        </div>
+        <div class="icon">▼</div>
       </div>
     </div>
   </header>
@@ -42,15 +55,15 @@
       <!-- 活動地點 -->
       <div class="section">
         <h2>活動地點</h2>
-        <div class="map-block">
+        <div class="map-block flex-column flex-md-row">
           <!-- <div id="map"> -->
           <GoogleMap />
           <!-- <img src="../../../static/images/Map.png"
                  alt=""> -->
           <!-- </div> -->
-          <div class="map-info">
+          <div class="map-info flex-column text-center text-md-left">
             <p>台北福華國際文教會館 2F 卓越堂<br />(台北市大安區新生南路三段 30 號)</p>
-            <div class="map-btn ml-auto">
+            <div class="map-btn mx-auto mx-md-0 ml-md-auto">
               <button type="button"
                       class="btn btn-light"
                       onclick="location.href='https://maps.google.com?daddr=台北福華國際文教會館 2F 卓越堂'">規劃路線</button>
@@ -60,23 +73,23 @@
             </div>
           </div>
         </div>
-        <a class="map-link"
+        <a class="map-link d-block text-center text-md-left"
            href="http://www.howard-hotels.com.tw/civil-service/destination/">福華國際文教會館 詳細交通資訊</a>
       </div>
 
       <!-- 報名資訊 -->
       <div class="section d-flex flex-column">
         <h2>報名資訊</h2>
-        <div class="price-block">
-          <div>
+        <div class="price-block flex-column flex-md-row justify-content-md-between">
+          <div class="">
             <p class="price-title">協會及協辦單位會員</p>
             <p class="price-nmb">400元</p>
           </div>
-          <div>
+          <div class="mt-3 mt-md-0">
             <p class="price-title">學生（憑學生證）</p>
             <p class="price-nmb">300元</p>
           </div>
-          <div>
+          <div class="mt-3 mt-md-0">
             <p class="price-title">非會員</p>
             <p class="price-nmb">600元</p>
           </div>
@@ -114,12 +127,12 @@
               <div>
                 <h3 class="schedule-item-title-ch text-primary">{{item.title.cht_1}}</h3>
                 <h4 class="schedule-item-title-eng">{{item.title.eng_1}}</h4>
-                <div class="schedule-item-lector"
+                <div class="schedule-item-lector d-flex flex-column flex-md-row align-items-start"
                      v-if="item.lector.job">
                   <div class="text-primary">授課講師</div>
                   <p>{{item.lector.job}}<br />{{item.lector.name}}</p>
                 </div>
-                <div class="schedule-item-leader"
+                <div class="schedule-item-leader d-flex flex-column flex-md-row align-items-start"
                      v-if="item.leader.job">
                   <div class="text-primary">引言人</div>
                   <p>{{item.leader.job}}<br />{{item.leader.name}}</p>
