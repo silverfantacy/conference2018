@@ -43,22 +43,25 @@
       <div class="section">
         <h2>活動地點</h2>
         <div class="map-block">
-          <div id="map">
-            <img src="../../../static/images/Map.png"
-                 alt="">
-          </div>
+          <!-- <div id="map"> -->
+          <GoogleMap />
+          <!-- <img src="../../../static/images/Map.png"
+                 alt=""> -->
+          <!-- </div> -->
           <div class="map-info">
             <p>台北福華國際文教會館 2F 卓越堂<br />(台北市大安區新生南路三段 30 號)</p>
             <div class="map-btn ml-auto">
               <button type="button"
-                      class="btn btn-light">規劃路線</button>
+                      class="btn btn-light"
+                      onclick="location.href='https://maps.google.com?daddr=台北福華國際文教會館 2F 卓越堂'">規劃路線</button>
               <button type="button"
-                      class="btn btn-light">檢視較大的地圖</button>
+                      class="btn btn-light"
+                      onclick="location.href='https://goo.gl/maps/Uo5jnJohZwK2'">檢視較大的地圖</button>
             </div>
           </div>
         </div>
         <a class="map-link"
-           href="">福華國際文教會館 詳細交通資訊</a>
+           href="http://www.howard-hotels.com.tw/civil-service/destination/">福華國際文教會館 詳細交通資訊</a>
       </div>
 
       <!-- 報名資訊 -->
@@ -79,17 +82,18 @@
           </div>
         </div>
         <ul class="price-info">
-          <li>截止日期：即日起至 107 年 11 月 02 日止。 </li>
+          <li>截止日期：即日起至 107 年 <span class="text-danger">11 月 02 日</span>止。 </li>
           <li>聯絡人：郭玲君 小姐</li>
           <li>電話：( 02 ) 2546 - 8824</li>
           <li>傳真：( 02 ) 2545 - 9225</li>
-          <li>報名方式：可利用傳真、E-MAIL 或線上報名。<br />
+          <li>報名方式：可利用傳真、<a href="mailto:info@nutraceutical.org.tw">E-MAIL</a> 或線上報名。<br />
             （報名完成後，將會與您聯絡通知活動簽到序號及繳費方式。）<br />
             ＊為響應環保，現場不提供紙杯，請自行準備水杯，謝謝。
           </li>
         </ul>
         <button type="button"
-                class="btn btn-primary price-btn">立 即 報 名
+                class="btn btn-primary price-btn"
+                onclick="location.href='https://nutraceutical.org.tw/online_all.php?class_id=236'">立 即 報 名
         </button>
       </div>
 
@@ -98,32 +102,34 @@
         <h2>議程表</h2>
         <div class="schedule-date"><span>11</span> NOVEMBER</div>
         <ul class="schedule">
-          <li class="schedule-item">
+          <li class="schedule-item"
+              v-for="item in AgendaData">
 
             <div class="schedule-item-time">
-              <div>09:00</div>
-              <div>~09:20</div>
+              <div>{{item.start_time}}</div>
+              <div>~{{item.end_time}}</div>
             </div>
             <div class="schedule-item-decoration"></div>
             <div>
               <div>
-                <h3 class="schedule-item-title-ch text-primary">合併應用抗癌藥物與營養補充品在三陰性乳癌小鼠模式的治療</h3>
-                <h4 class="schedule-item-title-eng">A therapeutic Synergism with Anti-cancer Agents and Nutritional
-                  Supplement Formulation Combination Treatment in TNBC-xenograft Mice</h4>
-                <div class="schedule-item-leader">
+                <h3 class="schedule-item-title-ch text-primary">{{item.title.cht_1}}</h3>
+                <h4 class="schedule-item-title-eng">{{item.title.eng_1}}</h4>
+                <div class="schedule-item-lector"
+                     v-if="item.lector.job">
                   <div class="text-primary">授課講師</div>
-                  <p>臺北醫學大學臺北癌症中心<br />院長 彭汪嘉康 院士</p>
+                  <p>{{item.lector.job}}<br />{{item.lector.name}}</p>
                 </div>
-                <div class="schedule-item-lector">
+                <div class="schedule-item-leader"
+                     v-if="item.leader.job">
                   <div class="text-primary">引言人</div>
-                  <p>臺北醫學大學臺北癌症中心<br />院長 彭汪嘉康 院士</p>
+                  <p>{{item.leader.job}}<br />{{item.leader.name}}</p>
                 </div>
               </div>
             </div>
 
           </li>
 
-          <li class="schedule-item">
+          <!-- <li class="schedule-item">
 
             <div class="schedule-item-time">
               <div>09:00</div>
@@ -147,7 +153,7 @@
               </div>
             </div>
 
-          </li>
+          </li> -->
         </ul>
       </div>
 
@@ -157,31 +163,32 @@
         <div class="form-group">
           <label for="theme">請選擇身分</label>
           <select class="form-control"
-                  id="exampleFormControlSelect1">
-            <option>醫生</option>
-            <option>藥師</option>
-            <option>護理師</option>
-            <option>營養師</option>
-            <option>醫檢人員</option>
+                  id="exampleFormControlSelect1"
+                  v-model="selectClass">
+            <option value="">--- 請選擇類別 ---</option>
+            <option v-for="item in className"
+                    :value="item">{{item}}</option>
           </select>
         </div>
         <table class="table mt-3">
           <thead class="bg-third text-white font-weight-bold">
             <tr>
               <th scope="col">公會學會名稱</th>
-              <th scope="col" class="text-center" style="padding-left: 12px;">教育學分數</th>
+              <th scope="col"
+                  class="text-center"
+                  style="padding-left: 12px;">教育學分數</th>
             </tr>
           </thead>
           <tbody>
-            <tr v-for="(item,key) in CreditData">
-            <tr>
+            <tr v-for="(item,key) in CreditData"
+                v-if="selectClass === '' | selectClass === item.class">
+              <th scope="row">{{item.title}}</th>
+              <td class="text-center font-weight-bold">{{item.credit}}</td>
+            </tr>
+            <!-- <tr>
               <th scope="row">中華民國醫事檢驗師公會全國聯合會</th>
               <td class="text-center font-weight-bold">7.4</td>
-            </tr>
-            <tr>
-              <th scope="row">中華民國醫事檢驗師公會全國聯合會</th>
-              <td class="text-center font-weight-bold">7.4</td>
-            </tr>
+            </tr> -->
           </tbody>
         </table>
       </div>

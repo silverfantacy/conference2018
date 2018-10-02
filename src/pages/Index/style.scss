@@ -33,7 +33,7 @@
       z-index: -1;
     }
     .header-subtitle {
-      color: $blue-light;
+      color: $third;
       line-height: rhythm(2);
     }
     .header-date {
@@ -111,7 +111,7 @@
       font-size: 1.25rem;
       margin-top: 1rem;
       text-decoration: none;
-      color: $blue-light;
+      color: $third;
     }
     /*=== 報名資訊 ===*/
     .price-block {
@@ -143,10 +143,14 @@
       font-weight: bold;
       padding-top: 0;
       padding-bottom: 0;
-      background-color: $blue-light;
+      background-color: $third;
       border: none;
       margin: 0 auto;
       margin-top: 1rem;
+      transition: background-color .5s;
+      &:hover {
+        background-color: $primary;
+      }
     }
     /*=== 議程表 ===*/
     .schedule-date {
@@ -206,7 +210,7 @@
     }
     .schedule-item-title-eng {
       font-size: 1rem;
-      color: $blue-light;
+      color: $third;
     }
     .schedule-item-leader,
     .schedule-item-lector {
@@ -250,7 +254,7 @@
           font-size: 1.25rem;
         }
         tbody {
-          tr:nth-child( n+2) {
+          tr:nth-child(2n) {
             background: rgba($third, .1)
           }
           th {
