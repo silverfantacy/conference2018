@@ -33,6 +33,7 @@ export default {
     // console.log(AgendaDataRef.orderByChild('id'))
   },
   methods: {
+    /* 取得 Data */
     getData() {
       let vm = this
       AgendaDataRef.orderByChild('id').on('value', function(snapshot) {
@@ -41,6 +42,8 @@ export default {
         vm.AgendaData = val
       })
     },
+
+    /* 送出 Data */
     submitAgenda() {
       let vm = this
       var temData = vm.tempAgendaData
@@ -79,12 +82,13 @@ export default {
         }
       }
     },
+
+    /* 刪除 Data */
     removeTodo(key) {
       AgendaDataRef.child(key).set(null)
-      console.log(key)
+      // console.log(key)
     }
-  },
-  computed: {}
+  }
 }
 </script>
 

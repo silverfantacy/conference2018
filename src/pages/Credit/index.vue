@@ -21,6 +21,7 @@ export default {
     this.getData()
   },
   methods: {
+    /* 取得 Data */
     getData() {
       let vm = this
       CreditDataRef.on('value', function(snapshot) {
@@ -31,14 +32,16 @@ export default {
           // console.log(key, childData)
           vm.CreditDataArray.push(childData)
           // vm.CreditDataArray = childData
-          console.log(vm.CreditDataArray)
+          // console.log(vm.CreditDataArray)
         })
         var val = snapshot.val()
         // console.log(val)
         vm.CreditData = val
-        console.log(vm.CreditData)
+        // console.log(vm.CreditData)
       })
     },
+
+    /* 送出 Data */
     submitCredit() {
       // alert('有呼叫到')
       let vm = this
@@ -52,7 +55,7 @@ export default {
       // 內容設定
       var str = {}
       var timestamp = Math.floor(Date.now())
-      console.log(timestamp)
+      // console.log(timestamp)
       if (!temData.other_class) {
         str = {
           id: timestamp,
@@ -81,20 +84,16 @@ export default {
         credit: ''
       }
     },
+
+    /* 刪除 Data */
     removeCredit(key) {
       CreditDataRef.child(key).set(null)
-      console.log(key)
+      // console.log(key)
     }
   },
   computed: {
     // 類別列表
     className() {
-      // let vm = this
-      // console.log(vm.CreditData.length)
-      // for (let i = 0; i < vm.CreditData.length; i++) {
-      //   console.log(vm.CreditData[i].class)
-      // }
-      // return vm.CreditData
       let vm = this
       var str = ''
       var allClass = []
@@ -103,7 +102,7 @@ export default {
         str = item.class
         allClass.push(str)
       })
-      console.log(allClass)
+      // console.log(allClass)
       // 篩選出第一個符合的 element
       var result = allClass.filter(function(element, index, arr) {
         return arr.indexOf(element) === index

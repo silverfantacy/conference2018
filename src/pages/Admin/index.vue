@@ -10,31 +10,41 @@ export default {
   },
   mounted() {
     // console.log(this.$route.fullPath)
+    var password = prompt('請輸入密碼', '')
+    if (password === '335') {
+      alert('Welcome!')
+      location.href = '/#/admin'
+    } else {
+      if (password !== '335') {
+        alert('請再輸入一次密碼')
+        location.href = '/#/index'
+      }
+    }
   },
   computed: {
     scheduleActiveClass() {
       if (this.$route.fullPath === '/admin/schedule') {
         return {
-          'btn-info': true,
-          'btn-outline-info': false
+          'btn-third': true,
+          'btn-outline-third': false
         }
       } else {
         return {
-          'btn-info': false,
-          'btn-outline-info': true
+          'btn-third': false,
+          'btn-outline-third': true
         }
       }
     },
     creditActiveClass() {
       if (this.$route.fullPath === '/admin/credit') {
         return {
-          'btn-info': true,
-          'btn-outline-info': false
+          'btn-third': true,
+          'btn-outline-third': false
         }
       } else {
         return {
-          'btn-info': false,
-          'btn-outline-info': true
+          'btn-third': false,
+          'btn-outline-third': true
         }
       }
     }

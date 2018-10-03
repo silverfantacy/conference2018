@@ -27,6 +27,7 @@ export default {
     this.getCredit()
   },
   methods: {
+    /* 取得 Data */
     getAgenda() {
       let vm = this
       AgendaDataRef.orderByChild('id').on('value', function(snapshot) {
@@ -35,6 +36,8 @@ export default {
         vm.AgendaData = val
       })
     },
+
+    /* 取得 Data */
     getCredit() {
       let vm = this
       CreditDataRef.on('value', function(snapshot) {
