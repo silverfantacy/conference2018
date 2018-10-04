@@ -3,7 +3,7 @@
   display: block;
   height: 300px;
   @include media-breakpoint-up(md) {
-    flex: 1 2 635px;
+    flex: 2 1 600px;
     height: 300px;
   }
 }

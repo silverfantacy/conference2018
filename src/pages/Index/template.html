@@ -47,9 +47,15 @@
       </div>
 
       <!-- 活動時間 -->
-      <div class="section">
+      <div class="section section-date">
         <h2>活動時間</h2>
-        <p>2018/11/11 8:20~17:50</p>
+        <div class="container">
+          <div class="row flex-column flex-md-row">
+            <p class="font-weight-bold text-center col-12 col-md-6 mb-0 ">2018 <span>/</span> 11 <span>NOV</span> <span>/</span>
+              11 <span>SUN</span></p>
+            <p class="font-weight-bold text-center col-12 col-md-6 mb-0 "><span>AM</span> 08:20 ~ <span>PM</span> 05:00</p>
+          </div>
+        </div>
       </div>
 
       <!-- 活動地點 -->
@@ -62,7 +68,7 @@
                  alt=""> -->
           <!-- </div> -->
           <div class="map-info flex-column text-center text-md-left">
-            <p>台北福華國際文教會館 2F 卓越堂<br />(台北市大安區新生南路三段 30 號)</p>
+            <p>台北福華國際文教會館 2F 卓越堂<br /><span>(台北市大安區新生南路三段 30 號)</span></p>
             <div class="map-btn mx-auto mx-md-0 ml-md-auto">
               <button type="button"
                       class="btn btn-light"
@@ -95,10 +101,10 @@
           </div>
         </div>
         <ul class="price-info">
-          <li>截止日期：即日起至 107 年 <span class="text-danger">11 月 02 日</span>止。 </li>
-          <li>聯絡人：郭玲君 小姐</li>
-          <li>電話：( 02 ) 2546 - 8824</li>
-          <li>傳真：( 02 ) 2545 - 9225</li>
+          <li>截止日期：即日起至 107 年 <span class="text-danger font-weight-bold">11 月 02 日</span> 止。 </li>
+          <li>聯絡人：<span class="font-weight-bold">郭玲君</span> 小姐</li>
+          <li>電話：<span class="font-weight-bold">( 02 ) 2546 - 8824</span></li>
+          <li>傳真：<span class="font-weight-bold">( 02 ) 2545 - 9225</span></li>
           <li>報名方式：可利用傳真、<a href="mailto:info@nutraceutical.org.tw">E-MAIL</a> 或線上報名。<br />
             （報名完成後，將會與您聯絡通知活動簽到序號及繳費方式。）<br />
             ＊為響應環保，現場不提供紙杯，請自行準備水杯，謝謝。
@@ -127,15 +133,19 @@
               <div>
                 <h3 class="schedule-item-title-ch text-primary">{{item.title.cht_1}}</h3>
                 <h4 class="schedule-item-title-eng">{{item.title.eng_1}}</h4>
-                <div class="schedule-item-lector d-flex flex-column flex-md-row align-items-start"
+                <div class="schedule-item-lector d-flex flex-column flex-md-row align-items-stretch"
                      v-if="item.lector.job">
-                  <div class="text-primary">授課講師</div>
-                  <p class="mt-1 mt-md-0">{{item.lector.job}}<br />{{item.lector.name}}</p>
+                  <div class="text-primary px-2 fontw">授課講師</div>
+                  <p class="">{{item.lector.job}}<br />{{item.lector.name}}</p>
                 </div>
-                <div class="schedule-item-leader d-flex flex-column flex-md-row align-items-start"
+                <div class="schedule-item-leader d-flex flex-column flex-md-row align-items-stretch"
                      v-if="item.leader.job">
-                  <div class="text-primary">引言人</div>
-                  <p class="mt-1 mt-md-0">{{item.leader.job}}<br />{{item.leader.name}}</p>
+                  <div class="text-secondary px-2 text-md-center">引言人</div>
+                  <p class="">{{item.leader.job}}<br />{{item.leader.name}}</p>
+                </div>
+                <div class="schedule-item-ex d-flex flex-column flex-md-row align-items-stretch"
+                     v-if="item.leader.job">
+                  <p class="">{{item.leader.job}}<br />{{item.leader.name}}</p>
                 </div>
               </div>
             </div>

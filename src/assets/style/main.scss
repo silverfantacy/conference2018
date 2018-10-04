@@ -16,11 +16,18 @@
 }
 
 html {
+  font-size: 16px;
+  color: $dark;
+  @include media-breakpoint-up(md) {
+    font-size: 20px;
+  }
 }
 
 body {
-  font-family: "微軟正黑體", -apple-system, 'Roboto';
+  font-family: '微軟正黑體', -apple-system, 'Roboto';
   min-height: 100%;
   line-height: rhythm(3);
-  color: $dark;
+  @include media-breakpoint-up(md) {
+    line-height: rhythm(4);
+  }
 }

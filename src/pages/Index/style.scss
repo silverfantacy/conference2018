@@ -1,29 +1,38 @@
 @import '../../assets/style/main';
+// 文字齊頭尾
+@mixin text-justify {
+  text-align: justify;
+  text-justify: auto;
+}
+
+// 字體大小
+$fs-xl: 3rem;
+$fs-l: 2rem;
+$fs-m: 1.5rem;
+$fs-n: 1rem;
+$fs-s: 0.75rem;
 .index {
   /*=== 頁首 ===*/
   header {
     position: relative;
-    height: 100vh; // background-color: blanchedalmond;
+    height: 100vh;
     background-image: url('../../../static/images/header-ph.png');
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
     overflow: hidden;
     @include media-breakpoint-up(md) {
-      position: relative;
-      height: 600px; // background-color: blanchedalmond;
+      height: 600px;
       background-image: url('../../../static/images/header.png');
       background-position: center right;
       background-size: cover;
-      background-repeat: no-repeat;
-      overflow: hidden;
     }
     .logo {
       padding-top: rhythm(4);
       @include media-breakpoint-up(md) {
         padding-top: rhythm(5);
       }
-      >img {
+      > img {
         height: 40px;
         @include media-breakpoint-up(md) {
           height: 100%;
@@ -31,35 +40,35 @@
       }
     }
     .header-block {
-      margin-top: rhythm(9);
+      margin-top: rhythm(7);
       .header-title {
         margin-bottom: rhythm(1);
       }
       h1 {
-        font-size: 3rem; // text-shadow: 3px 3px 0 $info;
-        line-height: rhythm(6);
+        font-size: $fs-xl;
+        line-height: rhythm(7);
       }
       .bottom-text {
         position: absolute;
         top: 3px;
         left: 3px;
-        font-size: 3rem; // text-shadow: 3px 3px 0 $info;
-        line-height: rhythm(6);
+        font-size: $fs-xl;
+        line-height: rhythm(7);
         -webkit-text-stroke: 1px $info;
         color: white;
         z-index: -1;
       }
       .header-subtitle {
         color: $third;
-        line-height: rhythm(2);
+        line-height: rhythm(3);
       }
     }
     .header-date {
-      font-size: 3rem;
+      font-size: $fs-xl;
       color: $white;
       font-weight: bold;
       text-align: center;
-      line-height: 6rem;
+      line-height: 5.5rem;
       display: block;
       position: absolute;
       bottom: calc((-253px / 2) - 35px);
@@ -90,12 +99,12 @@
         left: 50%;
         transform: translateX(-50%);
         h1 {
-          font-size: 2rem;
+          font-size: $fs-l;
           line-height: rhythm(5);
         }
       }
       .icon {
-        font-size: 1.5rem;
+        font-size: $fs-m;
         font-weight: bolder;
         color: $info;
         position: absolute; // bottom: 0;
@@ -118,51 +127,78 @@
   /*=== 內容 ===*/
   .section {
     margin-top: rhythm(6);
+    @include media-breakpoint-up(md) {
+      margin-top: rhythm(7);
+    }
   }
   main {
     h2 {
       color: $primary;
-      font-size: 1.5rem;
+      font-size: $fs-m;
       font-weight: bold;
       position: relative;
-      margin-bottom: 1.5rem;
+      margin-bottom: $fs-m;
+      @include media-breakpoint-up(md) {
+        margin-bottom: $fs-l;
+      }
       &::before {
         content: '';
         display: block;
         position: absolute;
         bottom: 0;
-        left: 1rem;
-        width: 83px;
-        height: 1rem;
+        left: $fs-n;
+        width: rhythm(9);
+        height: $fs-n;
         background: $info;
         z-index: -1;
+        @include media-breakpoint-up(md) {
+          width: rhythm(11);
+        }
       }
     }
     /*=== 活動介紹 ===*/
     .introduction-content {
-      padding-left: 1.5rem;
+      padding-left: $fs-m;
       border-left: 5px solid $secondary;
       p {
-        text-indent: 2rem;
+        text-indent: $fs-l;
+        @include text-justify;
+      }
+    }
+    /*=== 活動時間 ===*/
+    .section-date {
+      p {
+        font-size: $fs-m;
+        font-family: 'Open Sans', '\5FAE\8EDF\6B63\9ED1\9AD4',
+          'Microsoft JhengHei', 'Apple LiGothic Medium', MingLiU, sans-serif;
+        color: $white;
+        border: 2px solid $primary;
+        background: $primary;
+        &:last-child {
+          color: $primary;
+          background: $white;
+        }
+        > span {
+          font-size: $fs-s;
+          font-family: '微軟正黑體';
+        }
       }
     }
     /*=== 活動地點 ===*/
     .map-block {
-      // height: 300px;
       background-color: $secondary;
-      display: flex; // overflow: hidden;
-      #map {
-        flex: 1 2 635px;
-        height: 300px;
-      }
+      display: flex;
       .map-info {
-        padding: 1.5rem;
+        padding: $fs-m;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         p {
-          font-size: 1.5rem;
+          font-size: $fs-m;
           color: $white;
+          > span {
+            font-size: $fs-n;
+          }
         }
         .map-btn .btn {
           color: $secondary;
@@ -171,7 +207,7 @@
     }
     .map-link {
       font-size: 1.25rem;
-      margin-top: 1rem;
+      margin-top: $fs-n;
       text-decoration: none;
       color: $third;
     }
@@ -179,8 +215,8 @@
     .price-block {
       display: flex;
       justify-content: space-between;
-      margin-bottom: 1rem;
-      >div {
+      margin-bottom: $fs-n;
+      > div {
         width: 100%;
         text-align: center;
         border: 1px solid $secondary;
@@ -190,10 +226,10 @@
           width: 350px;
         }
         .price-title {
-          font-size: 1.5rem; // font-weight: bold;
+          font-size: $fs-m;
         }
         .price-nmb {
-          font-size: 3rem;
+          font-size: $fs-xl;
           color: $secondary;
         }
         &:hover {
@@ -205,14 +241,14 @@
       width: 100%;
       height: 2.5rem;
       border-radius: 100px;
-      font-size: 1.5rem;
+      font-size: $fs-m;
       font-weight: bold;
       padding-top: 0;
       padding-bottom: 0;
       background-color: $third;
       border: none;
       margin: 0 auto;
-      margin-top: 1rem;
+      margin-top: $fs-n;
       transition: background-color 0.5s;
       @include media-breakpoint-up(md) {
         width: 400px;
@@ -226,7 +262,7 @@
     .schedule-date {
       color: $secondary;
       font-size: 1.25rem;
-      >span {
+      > span {
         font-size: 4rem;
         color: $dark;
         line-height: 4rem;
@@ -240,26 +276,33 @@
     .schedule-item {
       display: flex;
       flex-direction: row;
-      margin-top: 20px;
+      margin-top: rhythm(3);
       .schedule-item-time {
         width: rhythm(6);
         font-size: 1.125rem;
+        line-height: 1.125rem;
+        @include media-breakpoint-up(md) {
+          width: rhythm(8);
+        }
         div {
           text-align: right;
+          &:last-child() {
+            margin-top: rhythm(1);
+          }
         }
       }
     }
     .schedule-item-decoration {
-      width: 1rem;
+      width: $fs-n;
       margin: 0 rhythm(2);
       position: relative;
       &::before {
         content: '';
         display: block;
         border: 3px solid $secondary;
-        border-radius: 1rem;
-        height: 1rem;
-        width: 1rem;
+        border-radius: $fs-n;
+        height: $fs-n;
+        width: $fs-n;
         background-color: $white;
       }
       &::after {
@@ -275,31 +318,54 @@
       }
     }
     .schedule-item-title-ch {
-      font-size: 1.5rem;
-      font-weight: bold;
+      font-size: 1.2rem;
+      @include text-justify;
     }
     .schedule-item-title-eng {
-      font-size: 1rem;
+      font-size: $fs-n;
       color: $third;
     }
     .schedule-item-leader,
-    .schedule-item-lector {
-      // display: flex;
-      // align-items: center;
+    .schedule-item-lector,
+    .schedule-item-ex {
       margin-top: 13px;
-      >div {
-        display: block;
-        min-width: rhythm(10);
-        height: rhythm(4);
-        border: 1px solid $primary;
-        text-align: center;
-        line-height: 2.25rem;
-        margin-right: 13px;
+      font-size: $fs-n;
+      line-height: rhythm(2);
+      @include media-breakpoint-up(md) {
+        line-height: rhythm(3);
       }
-      >p {
-        line-height: rhythm(2);
-        margin-bottom: 0;
+      div {
+        line-height: rhythm(3);
+        @include media-breakpoint-up(md) {
+          line-height: rhythm(8);
+        }
       }
+      p {
+        color: $white;
+        padding: rhythm(1) rhythm(2);
+        margin: 0;
+      }
+    }
+    .schedule-item-lector {
+      div {
+        border: 1px solid $third;
+      }
+      p {
+        background: $third;
+      }
+    }
+    .schedule-item-leader {
+      div {
+        min-width: 102px;
+        border: 1px solid $secondary;
+      }
+      p {
+        background: $secondary;
+      }
+    }
+    .schedule-item-ex p {
+      color: $dark;
+      padding: 0;
     }
     /*=== 學分數 ===*/
     .section-credit {
@@ -309,10 +375,11 @@
         label {
           font-size: 1.25rem;
           color: #ff6767;
-          margin-right: 1rem;
+          margin-right: $fs-n;
           margin-bottom: 0;
+          font-weight: bold;
           @include media-breakpoint-up(md) {
-            margin-right: 1.5rem;
+            margin-right: $fs-m;
           }
         }
         select {
@@ -324,7 +391,6 @@
       }
       table {
         th {
-          // padding-left: 2rem;
           @include media-breakpoint-up(md) {
             padding-left: 4rem;
           }
@@ -340,7 +406,8 @@
             font-weight: normal;
           }
           td {
-            font-size: 1.5rem;
+            font-size: $fs-m;
+            min-width: rhythm(10);
           }
         }
       }
@@ -348,7 +415,7 @@
   }
   /*=== 頁尾 ===*/
   footer {
-    font-size: 0.75rem;
+    font-size: $fs-s;
     line-height: rhythm(2);
     margin: rhythm(6) 0;
     p {
