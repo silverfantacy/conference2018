@@ -26,7 +26,7 @@
                 </div>
               </div>
               <div class="form-group">
-                <label for="theme">中文主題1</label>
+                <label for="theme">中文主題</label>
                 <textarea type="text"
                           class="form-control"
                           id="theme"
@@ -34,14 +34,14 @@
                           v-model="tempAgendaData.title.cht_1"></textarea>
               </div>
               <div class="form-group">
-                <label for="theme">英文主題1</label>
+                <label for="theme">英文主題</label>
                 <textarea type="text"
                           class="form-control"
                           id="theme"
                           placeholder="例: Let nutrition be first-line treatment"
                           v-model="tempAgendaData.title.eng_1"></textarea>
               </div>
-              <div class="form-group">
+              <!-- <div class="form-group">
                 <label for="theme">中文主題2</label>
                 <textarea type="text"
                           class="form-control"
@@ -56,7 +56,7 @@
                           id="theme"
                           placeholder="例: Let nutrition be first-line treatment"
                           v-model="tempAgendaData.title.eng_2"></textarea>
-              </div>
+              </div> -->
               <div class="form-row">
                 <div class="form-group col-md-6">
                   <label for="lecturerUnits">講師服務單位</label>
@@ -93,6 +93,24 @@
                          v-model="tempAgendaData.leader.name">
                 </div>
               </div>
+              <div class="form-row">
+                <div class="form-group col-md-6">
+                  <label for="leaderUnits">致詞者服務單位</label>
+                  <input type="text"
+                         class="form-control"
+                         id="exUnits"
+                         placeholder="服務單位"
+                         v-model="tempAgendaData.ex.job">
+                </div>
+                <div class="form-group col-md-6">
+                  <label for="leaderName">致詞者姓名</label>
+                  <input type="text"
+                         class="form-control"
+                         id="exName"
+                         placeholder="姓名稱謂"
+                         v-model="tempAgendaData.ex.name">
+                </div>
+              </div>
               <button type="submit"
                       class="btn btn-primary w-100"
                       @click="submitAgenda()">新 增</button>
@@ -123,6 +141,10 @@
                    v-if="item.leader.job">
                   <span class="agenda-item-label">引言人</span>{{item.leader.job}}
                   <br>{{item.leader.name}}</p>
+                <p class="agenda-item-personnel"
+                   v-if="item.ex.job">
+                  <span class="agenda-item-label">致詞者</span>{{item.ex.job}}
+                  <br>{{item.ex.name}}</p>
               </div>
             </li>
             <!-- <li class="agenda-item p-3 mb-3">

@@ -23,6 +23,10 @@ export default {
         leader: {
           job: '',
           name: ''
+        },
+        ex: {
+          job: '',
+          name: ''
         }
       },
       AgendaData: []
@@ -60,7 +64,8 @@ export default {
         end_time: temData.end_time,
         title: temData.title,
         lector: temData.lector,
-        leader: temData.leader
+        leader: temData.leader,
+        ex: temData.ex
       }
       AgendaDataRef.child(setId).set(str)
       vm.tempAgendaData = {
@@ -77,6 +82,10 @@ export default {
           name: ''
         },
         leader: {
+          job: '',
+          name: ''
+        },
+        ex: {
           job: '',
           name: ''
         }

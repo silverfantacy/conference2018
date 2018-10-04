@@ -8,7 +8,7 @@ export default {
   data() {
     return {}
   },
-  mounted() {
+  created() {
     // console.log(this.$route.fullPath)
     var password = prompt('請輸入密碼', '')
     if (password === '335') {
@@ -16,7 +16,7 @@ export default {
       location.href = '/#/admin'
     } else {
       if (password !== '335') {
-        alert('請再輸入一次密碼')
+        alert('輸入錯誤')
         location.href = '/#/index'
       }
     }

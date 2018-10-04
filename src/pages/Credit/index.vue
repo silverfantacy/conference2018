@@ -7,10 +7,10 @@ export default {
   data() {
     return {
       tempCreditData: {
-        class: '醫生',
+        class: '',
         other_class: '',
-        title: '中華民國醫事檢驗師公會全國聯合會',
-        credit: '7.4'
+        title: '',
+        credit: ''
       },
       CreditData: [],
       CreditDataArray: [],
