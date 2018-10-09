@@ -16,6 +16,7 @@ $fs-s: 0.75rem;
   header {
     position: relative;
     height: 100vh;
+    min-height: 640px;
     background-image: url('../../../static/images/header-ph.png');
     background-position: center bottom;
     background-size: cover;
@@ -380,6 +381,7 @@ $fs-s: 0.75rem;
     }
     .schedule-item-lector {
       div {
+        min-width: rhythm(10); // letter-spacing: $fs-n;
         border: 1px solid $third;
       }
       p {
@@ -388,7 +390,7 @@ $fs-s: 0.75rem;
     }
     .schedule-item-leader {
       div {
-        min-width: 102px;
+        min-width: rhythm(10);
         border: 1px solid $secondary;
       }
       p {

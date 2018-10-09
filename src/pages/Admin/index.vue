@@ -13,7 +13,13 @@ export default {
     var password = prompt('請輸入密碼', '')
     if (password === '335') {
       alert('Welcome!')
-      location.href = '/#/admin'
+      if (this.$route.fullPath === '/admin/schedule') {
+        location.href = '/?#/admin/schedule'
+      } else if (this.$route.fullPath === '/admin/credit') {
+        location.href = '/?#/admin/credit'
+      } else {
+        location.href = '/?#/admin'
+      }
     } else {
       if (password !== '335') {
         alert('輸入錯誤')
