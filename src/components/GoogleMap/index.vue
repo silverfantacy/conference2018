@@ -47,8 +47,10 @@ export default {
     geolocate: function() {
       navigator.geolocation.getCurrentPosition(position => {
         this.center = {
-          lat: position.coords.latitude,
-          lng: position.coords.longitude
+          lat: 25.02368,
+          lng: 121.534225
+          // lat: position.coords.latitude,
+          // lng: position.coords.longitude
         }
       })
     }
